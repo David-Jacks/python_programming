@@ -11,3 +11,10 @@ print(phonebook)
 
 for k in phonebook:
     print(k, phonebook[k])
+
+#dictionary comprehension
+numbers = [1, 2 ,3, 4, 5]
+
+dict_numbers = {key:key*2 for key in numbers}
+
+print(dict_numbers)
