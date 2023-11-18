@@ -41,4 +41,3 @@ while (user_choice != 5):
 myfile = open('user_details.txt', 'wb')
 pickle.dump(users_details, myfile)
 myfile.close()
-print(users_details)
