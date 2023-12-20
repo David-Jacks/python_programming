@@ -61,7 +61,7 @@ while tmp is not None:
     print(tmp.val)
     tmp = tmp.next
 print()
-#deleting a node at a specified positin in a linked list
+#deleting a node at a specified position in a linked list
 pos = 1
 tmp = head
 
