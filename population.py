@@ -5,7 +5,7 @@ start_no = int(input("Enter the starting number of organisms: "))
 increase = start_no
 aver_increase = float(input("Enter the average daily population increase(as percentage): ")) / 100
 
-no_days = int(input("Enter the number of das he organism will be left to multiply: ")) 
+no_days = int(input("Enter the number of day he organism will be left to multiply: ")) 
 
 # processing and output
 

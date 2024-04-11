@@ -18,7 +18,7 @@ if (pri_color1 == "red" or pri_color1 == "blue" or pri_color1 == "yellow"):
         print("The result is a purple color")
     elif ((pri_color1 == "blue" and pri_color2 == "yellow") or (pri_color1 == "yellow" and pri_color2 == "blue")):
         print("The result is a green color")
-    elif ((pri_color1 == "yellow" and pri_color2 == "red") or (pri_color1 == "red" and pri_color2 == "yelow")):
+    elif ((pri_color1 == "yellow" and pri_color2 == "red") or (pri_color1 == "red" and pri_color2 == "yellow")):
         print("The result is a orange color")
     else:
         print("wrong second primary color was entered")
