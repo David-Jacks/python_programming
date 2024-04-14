@@ -18,7 +18,7 @@ for i in range(12):
     if (rainfall[i] < lowest):
         lowest = rainfall[i]
 
-#outputing
+#Outputing
 print("The total rainfall for the year is", total_rainfall)
 print(f"Average monthly rainfall is {average_mon_rainfall :.2f}")
 print(f"The months with the highest and lowest amounts are, {highest} and {lowest} respectively")

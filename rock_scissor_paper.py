@@ -13,7 +13,7 @@ def main():
             print("thank you for playing this game")
             return
 
-        print("You selected " + usersChoice);
+        print("You selected " + usersChoice)
         print()
         print("And your Computer also selected " + computerChoice)
         print()
