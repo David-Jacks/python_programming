@@ -11,6 +11,8 @@ user_file = open('drivers_exam.txt', 'r')
 user_choices = user_file.readline() #reading the file into the user_choices list
 
 user_file.close() #closing the file
+
+print(user_choices)
 #processing inputs
 for i in range(len(user_choices)):
     if (user_choices[i] == answers[i]):
