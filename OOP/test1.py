@@ -35,6 +35,7 @@ while tmp is not None:
     print(tmp.val)
     tmp = tmp.next
 print()
+
 #insertion at a particular position in a linked list
 #let say we are inserting at position 3
 pos = 1
@@ -53,7 +54,7 @@ while (tmp != None):
              newNode.next = tmpAdd
              break
         tmp = tmp.next
-        counter += 1
+        counter += 1    
 
 #printing linked list after insertion
 tmp = head #printing the linked list values
@@ -61,6 +62,7 @@ while tmp is not None:
     print(tmp.val)
     tmp = tmp.next
 print()
+
 #deleting a node at a specified position in a linked list
 pos = 1
 tmp = head
