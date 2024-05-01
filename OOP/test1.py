@@ -1,3 +1,4 @@
+import pickle
 # creating a Dog class in python
 # class Dog:
 # #     class attribute
@@ -17,10 +18,15 @@
 # print(f"{firstDog.name} is a {firstDog.attri1}")
 
 class Node:
+    '''
+    this is the decription of the class
+    this represent information about the class that should be known to users of the class
+    '''
     def __init__(self, val):
         self.val = val
         self.next = None #since python is dynamically typed, the next will automatically store the address of a type node if a node is assigned to it
-        
+    def __str__(self) -> str:
+          return "Node class to store the address and the value at a particular node"
 head = Node(4)
 tmp = head
 counter = 1
@@ -32,7 +38,7 @@ while(counter != 5):
 
 tmp = head #printing the linked list values
 while tmp is not None:
-    print(tmp.val)
+    # print(tmp.val)
     tmp = tmp.next
 print()
 
@@ -59,7 +65,7 @@ while (tmp != None):
 #printing linked list after insertion
 tmp = head #printing the linked list values
 while tmp is not None:
-    print(tmp.val)
+    # print(tmp.val)
     tmp = tmp.next
 print()
 
@@ -80,5 +86,6 @@ while(tmp != None):
 #printing linked list after deletion
 tmp = head #printing the linked list values
 while tmp is not None:
-    print(tmp.val)
+    # print(tmp.val)
     tmp = tmp.next
+
