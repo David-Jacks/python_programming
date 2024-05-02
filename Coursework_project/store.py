@@ -12,6 +12,10 @@ class Store:
         self.__name = name
         print(f"{self.__name} store created successfully")
 
+    #printing the name of the store
+    def print_name(self):
+        return self.__name
+
     # adding products to store
     def add_product(self, product):
         self.__products.append(product)
