@@ -3,7 +3,6 @@ from product import Product
 
 class Store:
     __products = []
-    __no_in_stock = 0
     __purchases_made = 0
     __profit = 0.0
     __loses = 0.0
@@ -25,6 +24,13 @@ class Store:
         # pro_ind = self.__products.index(product)
         self.__products.remove(product)
 
+    # generating info about a product
+    def pro_info(self, product):
+        pro_list = self.__products
+        for i in range(len(pro_list)):
+            if product == pro_list[i].__name:
+                return(pro_list[i].pro_reports())
+        
     # generating reports 
     def gen_reports(self):
         print("--" * 20)

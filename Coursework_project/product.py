@@ -7,16 +7,17 @@ class Product:
     __available = 0
     __expiring_date = ""
 
-    def __init__(self, name, cp, sp, exp_date):
+    def __init__(self, name, cp, sp, stock_amt, exp_date):
         self.__name = name
         self.__cost_price = cp
         self.__selling_price = sp
         self.__expiring_date = exp_date
+        self.__available = stock_amt
 
     # updating product info
     def update_product(self, sp):
         self.__selling_price = sp
-
+        
     #product reports
     def pro_reports(self):
         print("==" * 50)
