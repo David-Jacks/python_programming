@@ -21,19 +21,29 @@ class Store:
     
     # deleting product from store
     def delete_product(self, product):
-        # pro_ind = self.__products.index(product)
-        self.__products.remove(product)
+        for i in range(len(self.__products)):
+            if product == self.__products[i]:
+                return self.__products.pop(i)
+        return ""
 
     # generating info about a product
     def pro_info(self, product):
         pro_list = self.__products
         for i in range(len(pro_list)):
-            if product == pro_list[i].__name:
+            if product == pro_list[i].get_pro_name():
                 return(pro_list[i].pro_reports())
-        
+        return ""
+    # calculating total profit and loses
+    
+    for i in range(len(__products)):
+        __profit += __products[i].get_profit()
     # generating reports 
     def gen_reports(self):
-        print("--" * 20)
+        print("**" * 20)
+        print(f"The total number of products in {self.__name} is {len(self.__products)}")
+        print(f"The total profit is {self.__profit} and the total loses made is {self.__loses}")
+        print()
+        print("Below is the info about the available items in stock currently:")
         for item in self.__products:
             print(f"{item.pro_reports()}")
 
