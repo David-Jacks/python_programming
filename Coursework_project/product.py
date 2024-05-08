@@ -15,8 +15,14 @@ class Product:
         self.__date_of_purchase = date
 
     # updating product info
-    def update_product(self, sp):
+    def update_product_name(self, name):
+        self.__name = name
+    
+    def update_product_price(self, sp):
         self.__selling_price = sp
+    
+    def update_product_stock(self, stc_amt):
+        self.__available = stc_amt
 
     #geting the name of the product
     def get_pro_name(self):

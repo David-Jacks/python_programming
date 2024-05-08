@@ -33,13 +33,30 @@ class Store:
             if product == pro_list[i].get_pro_name():
                 return(pro_list[i].pro_reports())
         return ""
-    # calculating total profit and loses
     
+    #updating products in stores
+    def update_product(self, name, atr, choice):
+        for i in range(len(self.__products)):
+            if self.__products[i].get_pro_name() == name:
+                if choice == 1:
+                    self.__products[i].update_product_price(atr)
+                    return ("update completed")
+                elif choice == 2:
+                    self.__products[i].update_product_name(atr)
+                    return("update completed")
+                elif choice == 3:
+                    self.__products[i].update_product_stock(atr)
+                else:
+                    return -1
+        return ("")
+
+
+    # calculating total profit and loses
     for i in range(len(__products)):
         __profit += __products[i].get_profit()
     # generating reports 
     def gen_reports(self):
-        print("**" * 20)
+        print("-" * 20)
         print(f"The total number of products in {self.__name} is {len(self.__products)}")
         print(f"The total profit is {self.__profit} and the total loses made is {self.__loses}")
         print()
