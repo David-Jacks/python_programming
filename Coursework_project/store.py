@@ -1,15 +1,14 @@
 from product import Product
+import matplotlib.pyplot as plt
 #Store class
 
 class Store:
     __products = []
     __purchases_made = 0
     __profit = 0.0
-    __loses = 0.0
 
     def __init__(self, name):
         self.__name = name
-        print(f"{self.__name} store created successfully")
 
     #printing the name of the store
     def print_name(self):
@@ -51,18 +50,44 @@ class Store:
         return ("")
 
 
-    # calculating total profit and loses
-    for i in range(len(__products)):
-        __profit += __products[i].get_profit()
+   
     # generating reports 
     def gen_reports(self):
-        print("-" * 20)
+         # calculating total profit and loses
+        #this is to always make sure that the profit amount is not mis calculated, if called multiple times
+        self.__profit = 0.0
+        for i in range(len(self.__products)):
+            self.__profit += self.__products[i].get_profit()
+        # printing reports
+        print()
+        print("-" * 50)
         print(f"The total number of products in {self.__name} is {len(self.__products)}")
-        print(f"The total profit is {self.__profit} and the total loses made is {self.__loses}")
+        print(f"The estimated profit if all products are out of stock is {self.__profit}")
         print()
         print("Below is the info about the available items in stock currently:")
         for item in self.__products:
             print(f"{item.pro_reports()}")
+
+    # generating graphical report
+    def gen_graph(self):
+        product_names = []
+        stock_amount = []
+        pro_list = self.__products
+        
+        # get the product names and thier coresponding stock value in differnt lists
+        for i in range(len(pro_list)):
+            product_names.append(pro_list[i].get_pro_name())
+            stock_amount.append(pro_list[i].get_stock_amt())
+        
+        plt.figure(figsize=(6, 4)) #this is the size of the chart
+        plt.bar(product_names, stock_amount, color="blue")
+        plt.title("Product Stock Analysis")
+        plt.xlabel("Product")
+        plt.ylabel("Stock Amount")
+        # plt.xticks(rotation=45)
+
+        plt.tight_layout()
+        plt.show()
 
     #string representation
     def __str__(self):

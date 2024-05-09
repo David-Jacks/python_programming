@@ -17,6 +17,17 @@ store\n4. Generate report on a product\n5. Generate report on store \
 def upd_prompt():
     print("1. update product price: \n2. update product name: \n3. update product amount in stock: \n4. cancel updating") 
 
+# creating a custom input function that is going to validate user inputs to prevent any breakage in the program
+def get_input(mess):
+    while True:
+        user_input = input(mess)
+        if user_input.isdigit():
+            return int(user_input)
+        else:
+            print("You entered an incorrect input, you could have killed a thousand!!\nEnter an \
+integer value to make a choice from the list of options")
+
+
 # generating automatic dates for when products are being added
 date1 = datetime.datetime.now().strftime("%Y/%m/%d")
 def main():
@@ -34,8 +45,8 @@ def main():
     while query_flag:
         #user prompting
         propmt_user()
-        user_choice = int(input("Waiting for your choice: "))
-        
+        user_choice = get_input("Waiting for your choice: ")
+
         if user_choice == 1:
             name = input("What is the name of the product: ")
             cp = float(input("How much is the original cost: "))
@@ -47,7 +58,7 @@ def main():
             # propmt_user()
         elif user_choice == 2:
             upd_prompt()
-            choice = int(input("Choose from the options to continue updating"))
+            choice = get_input("Choose from the options to continue updating: ")
             if choice == 1:
                 name = input("Enter name of product: ")
                 new_price = float(input("Enter new price: "))
@@ -79,6 +90,7 @@ def main():
             # propmt_user()
         elif user_choice == 6:
             print("Generating a graphical report on the products in the store")
+            user_store.gen_graph()
             # propmt_user()
         elif user_choice == 7:
             query_flag = False
@@ -87,15 +99,5 @@ def main():
             print("you entered an incorrect choice please check, and try again")
             # propmt_user()
 
-    # product_A = Product("Biscuit", 20.0, 30.0, date1)
-    # product_B = Product("Bag", 10.0, 15.0, date1)
-    # print(product_A)
-
-    # Freediv = Store("Freediv")
-    # Freediv.add_product(product_A)
-    # Freediv.add_product(product_B)
-    # print(Freediv)
-    # Freediv.gen_reports()
-    # pass
 
 main()

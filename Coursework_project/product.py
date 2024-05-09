@@ -28,15 +28,20 @@ class Product:
     def get_pro_name(self):
         return(self.__name)
 
+    # get available product in stock
+    def get_stock_amt(self):
+        return self.__available
+    
     # get profit on an item
     def get_profit(self):
-        return (self.__selling_price - self.__cost_price)
+        return (self.__selling_price - self.__cost_price) * self.__available
     #product reports
     def pro_reports(self):
         print("==" * 50)
-        return (f"Product name -> {self.__name} \nProduct price -> {self.__selling_price} \nnumber sold \
--> {self.__available} \nPurchased on {self.__date_of_purchase}\nProfit made on each {self.__name} \
--> {(self.__selling_price - self.__cost_price)} \nAvailable in stock -> {self.__available}")
+        return (f"Product name -> {self.__name} \nProduct price -> {self.__selling_price} \
+\nPurchased on {self.__date_of_purchase} \nProfit made on each {self.__name} \
+-> {(self.__selling_price - self.__cost_price)}  \nTotal profit to be made -> {(self.__selling_price - self.__cost_price) * self.__available}\
+\nAvailable in stock -> {self.__available}")
     
     # string format printing of class
     def __str__(self):
