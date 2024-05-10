@@ -89,3 +89,16 @@ while tmp is not None:
     # print(tmp.val)
     tmp = tmp.next
 
+# id generation code 
+
+# id_num = 0
+      
+# def gen_id(id_num):
+#     init_id = '00'
+#     id_num += 1
+#     id_num = str(id_num)
+#     return (init_id + id_num)
+
+# for i in range(3):
+#     print(gen_id(id_num))
+#     id_num = int(gen_id(id_num))

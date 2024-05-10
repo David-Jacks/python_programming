@@ -1,12 +1,6 @@
 #product module
 
 class Product:
-    __name = ""
-    __cost_price = 0.0
-    __selling_price = 0.0
-    __available = 0
-    __date_of_purchase = ""
-
     def __init__(self, name, cp, sp, stock_amt, date):
         self.__name = name
         self.__cost_price = cp
@@ -47,9 +41,6 @@ class Product:
     def __str__(self):
         return (f"{self.__name}")
 
-    #Object representation of products
-    # def __repr__(self) -> str:
-    #     return (f"{self.__name}")
 
 
 

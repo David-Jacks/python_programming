@@ -3,8 +3,7 @@ import matplotlib.pyplot as plt
 #Store class
 
 class Store:
-    __products = []
-    __purchases_made = 0
+    __products = [] #stores the products that are being added to the store
     __profit = 0.0
 
     def __init__(self, name):
@@ -20,8 +19,11 @@ class Store:
     
     # deleting product from store
     def delete_product(self, product):
+        # at best cases this will run at constant times
+        if len(self.__products) == 1 and product == self.__products[0].get_pro_name():
+            return self.__products.pop(0)
         for i in range(len(self.__products)):
-            if product == self.__products[i]:
+            if product == self.__products[0].get_pro_name():
                 return self.__products.pop(i)
         return ""
 
@@ -47,12 +49,15 @@ class Store:
                     self.__products[i].update_product_stock(atr)
                 else:
                     return -1
-        return ("")
+        return ""
 
 
    
     # generating reports 
     def gen_reports(self):
+        # if there is no item in the store print that
+        if len(self.__products) < 1:
+            return ""
          # calculating total profit and loses
         #this is to always make sure that the profit amount is not mis calculated, if called multiple times
         self.__profit = 0.0
@@ -67,9 +72,14 @@ class Store:
         print("Below is the info about the available items in stock currently:")
         for item in self.__products:
             print(f"{item.pro_reports()}")
+        
+        return None
 
     # generating graphical report
     def gen_graph(self):
+        # if there is no item in the store you cant generate any record
+        if len(self.__products) < 1:
+            return ""
         product_names = []
         stock_amount = []
         pro_list = self.__products
@@ -88,6 +98,7 @@ class Store:
 
         plt.tight_layout()
         plt.show()
+        return None
 
     #string representation
     def __str__(self):
