@@ -47,6 +47,7 @@ class Store:
                     return("update completed")
                 elif choice == 3:
                     self.__products[i].update_product_stock(atr)
+                    return("update completed")
                 else:
                     return -1
         return ""

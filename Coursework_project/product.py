@@ -40,8 +40,3 @@ class Product:
     # string format printing of class
     def __str__(self):
         return (f"{self.__name}")
-
-
-
-
-

@@ -145,6 +145,5 @@ def main():
             print("you entered an incorrect choice please check, and try again")
             # propmt_user()
 
-# running the main function only when it is the right module
-# if __name__ == "main":
+
 main()
